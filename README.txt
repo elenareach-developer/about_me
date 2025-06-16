@@ -1,4 +1,4 @@
-# 👋 Hi there, I'm [Your Name]  
+# 👋 Hi there, I'm Elena
 **Front-End Architect | Back-End Builder | Data Whisperer | AI Explorer**
 
 ---
