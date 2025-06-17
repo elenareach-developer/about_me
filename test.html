@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Typing Animation</title>
+  <style>
+    #output {
+      font-size: 2rem;
+      font-family: monospace;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+  <div id="output"></div>
+
+  <script>
+    const phrase = "a web developer";
+    const output = document.getElementById("output");
+
+    let index = 0;
+
+    function showNextChar() {
+      output.textContent = phrase.slice(0, index + 1);
+      index++;
+
+      if (index < phrase.length) {
+        setTimeout(showNextChar, 150); // next character
+      } else {
+        setTimeout(() => {
+          index = 0;
+          output.textContent = "";
+          setTimeout(showNextChar, 400); // start again after pause
+        }, 2000); // pause after full phrase
+      }
+    }
+
+    showNextChar(); // start the loop
+  </script>
+</body>
+</html>

@@ -33,9 +33,7 @@
 					<!-- Banner -->
 						<section id="banner">
 							<header>
-								<h2>a web developer </h2>
-								<p>coding with a mountain view </p>
-							
+								<h2> w<span id="output"></span> </h2>
 							</header>
 						</section>
 
@@ -104,7 +102,7 @@
 													<header>
 														<h3>Keeping the Flow as One: My Joy with the Booking App</h3>
 													</header>
-													<p>We started building a booking app with only a basic flow for the customer—it was clear, and I truly enjoyed it. Suddenly, the vendor and supervisor roles were added. That’s when I realized how powerful it is to understand the full project flow. I had a complete view of the system, and the feeling of control was truly empowering. With me, you go to Denver.</p>
+													<p>We started building a booking app with only a basic flow for the customer—it was clear, and I truly enjoyed it. Suddenly, the vendor and supervisor roles were added. That’s when I realized how powerful it is to understand the full project flow. I had a complete view of the system, and the feeling of control was truly empowering. With me, you fly higher.</p>
 												</section>
 											</div>
 										</div>
@@ -252,6 +250,29 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				const phrase = "eb developer";
+				const output = document.getElementById("output");
+			
+				let index = 0;
+			
+				function showNextChar() {
+				  output.textContent = phrase.slice(0, index + 1);
+				  index++;
+			
+				  if (index < phrase.length) {
+					setTimeout(showNextChar, 150); // next character
+				  } else {
+					setTimeout(() => {
+					  index = 0;
+					  output.textContent = "";
+					  setTimeout(showNextChar, 400); // start again after pause
+					}, 2000); // pause after full phrase
+				  }
+				}
+			
+				showNextChar(); // start the loop
+			  </script>
 
 	</body>
 </html>
